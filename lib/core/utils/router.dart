@@ -25,4 +25,4 @@ final _router = GoRouter(
   ],
 );
 
-final router = _router; 
+final router = _router;
