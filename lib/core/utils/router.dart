@@ -8,7 +8,7 @@ final _router = GoRouter(
     // HomeScreen
     GoRoute(
       path: HomeScreen.routeName,
-      builder: (context, state) => const HomeScreen(),
+      builder: (context, state) => const OnboardingScreen(),
       routes: [
         //dashboard screen
         GoRoute(
@@ -19,8 +19,10 @@ final _router = GoRouter(
     ),
     // OnboardingScreen
     GoRoute(
-        path: OnboardingScreen.routeName,
-        builder: (context, state) => const OnboardingScreen()),
+      path: OnboardingScreen.routeName,
+      builder: (context, state) => const OnboardingScreen(),
+    ),
+
     //
   ],
 );
