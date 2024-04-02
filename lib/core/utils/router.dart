@@ -28,12 +28,14 @@ final _router = GoRouter(
 
     //all auth pages
     GoRoute(
-      path: ToggleLoginRegister.routeName,
+      name: "auth",
+      path: ToggleLoginRegister.routePath,
       builder: (context, state) => const ToggleLoginRegister(),
       routes: [
         //forget password screen
         GoRoute(
-          path: ForgetPasswordScreen.routeName,
+          name: ForgetPasswordScreen.routeName,
+          path: ForgetPasswordScreen.routePath,
           builder: (context, state) => const ForgetPasswordScreen(),
         ),
       ],

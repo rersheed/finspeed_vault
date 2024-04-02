@@ -10,7 +10,8 @@ import 'widgets/textlink.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({super.key});
-  static const String routeName = "/forget-password";
+  static const String routePath = "/forget-password";
+  static const String routeName = "forget-password";
 
   @override
   State<ForgetPasswordScreen> createState() => _ForgetPasswordScreenState();
@@ -73,7 +74,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               style: TextStyle(color: AppColors.greyColor),
             ),
             LinkComponent(
-              function: () => context.go(ToggleLoginRegister.routeName),
+              function: () => context.go(ToggleLoginRegister.routePath),
               text: "Login",
               linkColor: AppColors.whiteColor,
             ),

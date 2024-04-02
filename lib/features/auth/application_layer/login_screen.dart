@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
           height: 30,
         ),
         LinkComponent(
-          function: () => context.go(ForgetPasswordScreen.routeName),
+          function: () => context.go(ForgetPasswordScreen.routePath),
           text: "Forget User / Password ?",
           linkColor: AppColors.greyColor,
         ),

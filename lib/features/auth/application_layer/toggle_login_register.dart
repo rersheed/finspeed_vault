@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class ToggleLoginRegister extends StatefulWidget {
   const ToggleLoginRegister({super.key});
-  static const String routeName = "/auth";
+  static const String routePath = "/auth";
 
   @override
   State<ToggleLoginRegister> createState() => _ToggleLoginRegisterState();

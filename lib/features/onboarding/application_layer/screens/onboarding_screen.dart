@@ -36,7 +36,7 @@ class OnboardingScreen extends StatelessWidget {
                 effect: const ExpandingDotsEffect(),
               ),
               ElevatedButton(
-                onPressed: () => context.go(ToggleLoginRegister.routeName),
+                onPressed: () => context.go(ToggleLoginRegister.routePath),
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
