@@ -10,7 +10,7 @@ import 'widgets/textlink.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({super.key});
-  static const String routePath = "/forget-password";
+  static const String routePath = "forget-password";
   static const String routeName = "forget-password";
 
   @override
