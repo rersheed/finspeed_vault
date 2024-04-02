@@ -1,3 +1,4 @@
+import 'package:finspeed_vault/features/auth/application_layer/toggle_login_register.dart';
 import 'package:finspeed_vault/features/onboarding/application_layer/screens/intro1_screen.dart';
 import 'package:finspeed_vault/features/onboarding/application_layer/screens/intro2_screen.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,7 @@ class OnboardingScreen extends StatelessWidget {
                 effect: const ExpandingDotsEffect(),
               ),
               ElevatedButton(
-                onPressed: () => context.go('/'),
+                onPressed: () => context.go(ToggleLoginRegister.routeName),
                 style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
