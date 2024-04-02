@@ -18,10 +18,10 @@ class Background extends StatelessWidget {
         width: screen.width,
         child: Stack(
           children: [
-            const Positioned(
-              top: -150,
-              right: -150,
-              child: BackgroundCircleShadow(),
+            Positioned(
+              top: -screen.height * 0.1,
+              right: -screen.width * 0.1,
+              child: const BackgroundCircleShadow(),
             ),
             const Positioned(
               bottom: -100,
