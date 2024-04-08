@@ -2,6 +2,7 @@ import 'package:finspeed_vault/core/utils/colors.dart';
 import 'package:finspeed_vault/features/auth/application_layer/toggle_login_register.dart';
 import 'package:finspeed_vault/features/auth/application_layer/widgets/background.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 import 'widgets/button.dart';
@@ -30,48 +31,49 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
   Widget build(BuildContext context) {
     Widget formContent = Column(
       children: [
-        const SizedBox(height: 200),
-        const Text(
-          "Create Your Account",
+        SizedBox(height: 200.h),
+        Text(
+          "Reset Password",
           style: TextStyle(
             color: AppColors.whiteColor,
-            fontSize: 30,
+            fontSize: 30.sp,
           ),
         ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: 20.h,
         ),
         const Text(
           "Enter your phone number below to reset your password",
-          style: TextStyle(color: AppColors.greyColor),
+          style: TextStyle(
+            color: AppColors.greyColor,
+          ),
         ),
-        const SizedBox(
-          height: 30,
+        SizedBox(
+          height: 120.h,
         ),
         CustomTextField(
           obsecureText: false,
           textController: phoneController,
           label: "Enter Your Phone Number",
         ),
-        const SizedBox(
-          height: 50,
+        SizedBox(
+          height: 60.h,
         ),
         CustomButton(
           onPressed: () {},
           buttonText: "Change Password",
         ),
-        const SizedBox(
-          height: 20,
-        ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: 50.h,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
               "Remember your login details?",
-              style: TextStyle(color: AppColors.greyColor),
+              style: TextStyle(
+                color: AppColors.greyColor,
+              ),
             ),
             LinkComponent(
               function: () => context.go(ToggleLoginRegister.routePath),
@@ -83,6 +85,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
       ],
     );
     return Background(
+      allowBackButton: true,
       form: formContent,
     );
   }

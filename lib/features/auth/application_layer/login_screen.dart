@@ -5,6 +5,7 @@ import 'package:finspeed_vault/features/auth/application_layer/widgets/button.da
 import 'package:finspeed_vault/features/auth/application_layer/widgets/textfield.dart';
 import 'package:finspeed_vault/features/auth/application_layer/widgets/textlink.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -34,65 +35,79 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     Widget formContent = Column(
       children: [
-        const SizedBox(height: 300),
-        const Text(
+        SizedBox(
+          height: 150.h,
+        ),
+        Text(
+          "Finspeed Vault",
+          style: TextStyle(
+            color: AppColors.whiteColor,
+            fontSize: 40.sp,
+          ),
+        ),
+        SizedBox(
+          height: 100.h,
+        ),
+        Text(
           "Login to Your Account",
           style: TextStyle(
             color: AppColors.whiteColor,
-            fontSize: 30,
+            fontSize: 30.sp,
           ),
         ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: 30.h,
         ),
         CustomTextField(
           obsecureText: false,
           textController: phoneController,
           label: "Phone Number",
         ),
-        const SizedBox(
-          height: 30,
+        SizedBox(
+          height: 30.h,
         ),
         CustomTextField(
           obsecureText: true,
           textController: passwordController,
           label: "Password",
         ),
-        const SizedBox(
-          height: 30,
+        SizedBox(
+          height: 50.h,
         ),
         CustomButton(
           onPressed: () {},
           buttonText: "Login",
         ),
-        const SizedBox(
-          height: 30,
+        SizedBox(
+          height: 40.h,
         ),
         LinkComponent(
           function: () => context.goNamed(ForgetPasswordScreen.routeName),
           text: "Forget User / Password ?",
           linkColor: AppColors.greyColor,
         ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: 30.h,
         ),
         IconButton(
           onPressed: () {},
-          icon: const Icon(
+          icon: Icon(
             Icons.fingerprint,
             color: AppColors.whiteColor,
-            size: 50,
+            size: 55.sp,
           ),
         ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: 20.h,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
               "Don’t have an account?",
-              style: TextStyle(color: AppColors.greyColor),
+              style: TextStyle(
+                color: AppColors.greyColor,
+              ),
             ),
             LinkComponent(
               function: widget.showRegistrationPage,
@@ -104,6 +119,14 @@ class _LoginScreenState extends State<LoginScreen> {
       ],
     );
     return Background(
+      backgroundImage: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+            "assets/images/background_image.png",
+          ),
+          fit: BoxFit.cover,
+        ),
+      ),
       form: formContent,
     );
   }

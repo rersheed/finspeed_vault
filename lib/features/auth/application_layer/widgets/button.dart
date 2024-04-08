@@ -12,7 +12,7 @@ class CustomButton extends StatefulWidget {
   });
 
   @override
-  _CustomButtonState createState() => _CustomButtonState();
+  State<CustomButton> createState() => _CustomButtonState();
 }
 
 class _CustomButtonState extends State<CustomButton> {
@@ -51,7 +51,7 @@ class _CustomButtonState extends State<CustomButton> {
               widget.buttonText,
               style: const TextStyle(
                 color: AppColors.blueColor,
-                fontWeight: FontWeight.bold,
+                fontSize: 20,
               ),
             ),
           ),

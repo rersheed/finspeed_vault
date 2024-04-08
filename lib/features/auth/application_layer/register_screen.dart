@@ -1,6 +1,10 @@
 import 'package:finspeed_vault/core/utils/colors.dart';
+import 'package:finspeed_vault/features/auth/application_layer/bvn_screen.dart';
+import 'package:finspeed_vault/features/auth/application_layer/terms_screen.dart';
 import 'package:finspeed_vault/features/auth/application_layer/widgets/background.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import 'widgets/button.dart';
 import 'widgets/textfield.dart';
@@ -18,12 +22,16 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  TextEditingController ninController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
   bool terms = false;
 
   @override
   void dispose() {
-    ninController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
     super.dispose();
   }
 
@@ -39,24 +47,40 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     Widget formContent = Column(
       children: [
-        const SizedBox(height: 200),
-        const Text(
+        SizedBox(height: 200.h),
+        Text(
           "Create Your Account",
           style: TextStyle(
             color: AppColors.whiteColor,
-            fontSize: 30,
+            fontSize: 30.sp,
           ),
         ),
-        const SizedBox(
-          height: 50,
+        SizedBox(
+          height: 70.h,
         ),
         CustomTextField(
           obsecureText: false,
-          textController: ninController,
-          label: "Enter Your NIN",
+          textController: emailController,
+          label: "Email",
         ),
-        const SizedBox(
-          height: 250,
+        SizedBox(
+          height: 30.h,
+        ),
+        CustomTextField(
+          obsecureText: true,
+          textController: passwordController,
+          label: "Password",
+        ),
+        SizedBox(
+          height: 30.h,
+        ),
+        CustomTextField(
+          obsecureText: true,
+          textController: confirmPasswordController,
+          label: "Confirm Password",
+        ),
+        SizedBox(
+          height: 100.h,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -68,31 +92,34 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             const Text(
               "I agree with ",
-              style: TextStyle(color: AppColors.greyColor),
+              style: TextStyle(
+                color: AppColors.greyColor,
+              ),
             ),
             LinkComponent(
-              function: () {},
+              function: () => context.goNamed(
+                TermsAndConditionsScreen.routeName,
+              ),
               text: "Terms & Conditions",
               linkColor: AppColors.pinkColor,
             ),
           ],
         ),
         CustomButton(
-          onPressed: () {},
-          buttonText: "Next",
+          onPressed: createAccount,
+          buttonText: "Create Account",
         ),
-        const SizedBox(
-          height: 20,
-        ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          height: 70.h,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
               "Already have an account?",
-              style: TextStyle(color: AppColors.greyColor),
+              style: TextStyle(
+                color: AppColors.greyColor,
+              ),
             ),
             LinkComponent(
               function: widget.showLoginPage,
@@ -106,5 +133,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Background(
       form: formContent,
     );
+  }
+
+  createAccount() {
+    //do logic
+    //after creation move to bvn
+    context.goNamed(BVNScreen.routeName);
   }
 }

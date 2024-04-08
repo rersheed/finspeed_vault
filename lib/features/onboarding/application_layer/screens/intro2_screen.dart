@@ -1,18 +1,18 @@
 import 'package:finspeed_vault/core/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class IntroTwoScreen extends StatelessWidget {
   const IntroTwoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size screen = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColors.blueColor,
       body: Stack(
         children: [
           Container(
-            width: screen.width,
+            width: 1.sw,
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/card2.png"),
@@ -21,33 +21,40 @@ class IntroTwoScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Column(
               children: [
                 SizedBox(
-                  height: screen.height * 0.57,
+                  height: 0.6.sh,
                 ),
                 RichText(
-                  text: const TextSpan(
+                  text: TextSpan(
                     style: TextStyle(
                       color: AppColors.whiteColor,
-                      fontSize: 45,
+                      fontSize: 40.sp,
                     ),
-                    children: [
-                      TextSpan(text: "A loan for every dream with "),
+                    children: const [
                       TextSpan(
-                        text: "mobile banking ",
-                        style: TextStyle(color: AppColors.pinkColor),
+                        text: "Make easy payments from your ",
+                      ),
+                      TextSpan(
+                        text: "mobile phone ",
+                        style: TextStyle(
+                          color: AppColors.pinkColor,
+                        ),
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: 30.h,
                 ),
-                const Text(
-                  "A convenient way to manage your money securely from mobile device.",
-                  style: TextStyle(color: AppColors.greyColor, fontSize: 20),
+                Text(
+                  "Making payment and bank account management seamless.",
+                  style: TextStyle(
+                    color: AppColors.greyColor,
+                    fontSize: 20.sp,
+                  ),
                 )
               ],
             ),
